@@ -1,0 +1,27 @@
+1. What happens when a file is deleted in the main branch and updated in a feature branch, and how is it handled 
+during a merge ?
+
+Answer: 
+When a file is deleted in the main branch and updated in a feature branch - It can result in a 'Conflict'. 
+This Conflict arises because Git is unable to decide which changes should be kept, as the file gets modified in 
+two different ways ( deleted in the main branch & updated in the feature branch). During this scenario, git throws a
+fatal error of 'CONFLICT', and expects it to be solved manually.
+Manually resolving the conflict can be done in the following ways:
+ 	1. Deleting the file completely from the main branch
+	2. Restoring the modified version of file in the feature branch.
+
+
+Example:
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature1)
+$ git commit -m "Change file1 in feature1"
+[feature1 a688764] Change file1 in feature1
+ 1 file changed, 1 insertion(+)
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature1)
+$ git checkout feature2
+Switched to branch 'feature2'
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git merge feature1
+CONFLICT (modify/delete): file1.txt deleted in HEAD and modified in feature1.  Version feature1 of file1.txt left in tree.
+Automatic merge failed; fix conflicts and then commit the result.

@@ -1,0 +1,3 @@
+2. What does the git ls-files command do, and what information does its output provide regarding the state of 
+files in a Git repository?
+Answer: ls-files is a git command used for listing tracked files or the files added in the staging area (ready to commit)

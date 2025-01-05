@@ -1,0 +1,72 @@
+6. How to unstage changes from the staged area, with command ?
+
+Answer:
+Staged changes refer to the changes of modifications which are ready to commit. Unstaging files can lead to them 
+being untracked. 
+Unstaging files refers to removing them from the staged area without loosing their changes.
+
+To unstage a specific file: git restore --staged "file_name"
+To unstage all files in the staging area: git restore --staged .
+
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git status
+On branch feature2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ashiya/question2.txt
+        modified:   ashiya/question3.txt
+        renamed:    newFile.txt -> new2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ashiya/question3.txt
+        modified:   ashiya/question4.txt
+
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git restore --staged "new2.txt"
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git status
+On branch feature2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ashiya/question2.txt
+        modified:   ashiya/question3.txt
+        deleted:    newFile.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ashiya/question3.txt
+        modified:   ashiya/question4.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new2.txt
+
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git restore --staged .
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git status
+On branch feature2
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ashiya/question2.txt
+        modified:   ashiya/question3.txt
+        modified:   ashiya/question4.txt
+        deleted:    newFile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$

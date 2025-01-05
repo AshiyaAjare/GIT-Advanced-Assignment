@@ -4,8 +4,9 @@ during a merge ?
 Answer: 
 When a file is deleted in the main branch and updated in a feature branch - It can result in a 'Conflict'. 
 This Conflict arises because Git is unable to decide which changes should be kept, as the file gets modified in 
-two different ways ( deleted in the main branch & updated in the feature branch). During this scenario, git throws a
-fatal error of 'CONFLICT', and expects it to be solved manually.
+two different ways ( deleted in the main branch & updated in the feature branch). 
+During this scenario, git throws a fatal error of 'CONFLICT', and expects it to be solved manually.
+
 Manually resolving the conflict can be done in the following ways:
  	1. Deleting the file completely from the main branch
 	2. Restoring the modified version of file in the feature branch.

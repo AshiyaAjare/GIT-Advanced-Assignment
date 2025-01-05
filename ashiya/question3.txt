@@ -1,0 +1,32 @@
+3. Under what conditions will Git consider a file that has been deleted as being renamed, and what criteria does 
+Git use to determine that a new file is a renamed version of the deleted file?
+
+Answer:
+Git renames a file based on 'content similarity' between the new file that is added and a file that is deleted.
+This similarity is identified by comparing both the files. If the new file is 50% (default value) similar to the deleted file,
+Git renames the file.
+Metadata (timestamps) is not considered while comparing the files, only the content of the files is considered.
+These renames can be detected by using the command 'git diff --find-renames'.
+
+
+Example:
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git rm newFile.txt
+rm 'newFile.txt'
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git add .
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git status -s
+D  newFile.txt
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ touch new2.txt
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git add "new2.txt"
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced (feature2)
+$ git status -s
+R  newFile.txt -> new2.txt

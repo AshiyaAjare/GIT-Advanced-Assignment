@@ -9,8 +9,8 @@ Steps:
 Step-1: Setting up two remote repositories - on GitHub and on GitLab
 Step-2: Initialising Git  > git init
 Step-3: Adding GitHub and GitLab Remotes 
-	>
-	>
+	> git@github.com:AshiyaAjare/GIT-Advanced-Assignment.git
+	> git remote add origin https://gitlab.com/AshiyaAjare/git_advanced.git
 Step-4: Verifying the connection withremote repositories
 	> git remote -v
 Step-5: Commiting the changes:
@@ -23,3 +23,57 @@ Step-7: Fetch and pull changes from a specific repository
 	> git pull origin-gitlab main
 
 working demo: 
+github: https://github.com/AshiyaAjare/GIT-Advanced-Assignment
+gitlab: https://gitlab.com/AshiyaAjare/git_advanced.git
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git remote add origin-github git@github.com:AshiyaAjare/GIT-Advanced-Assignment.git
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git remote add origin-gitlab https://gitlab.com/AshiyaAjare/git_advanced.git
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git remote -v
+origin-github   git@github.com:AshiyaAjare/GIT-Advanced-Assignment.git (fetch)
+origin-github   git@github.com:AshiyaAjare/GIT-Advanced-Assignment.git (push)
+origin-gitlab   https://gitlab.com/AshiyaAjare/git_advanced.git (fetch)
+origin-gitlab   https://gitlab.com/AshiyaAjare/git_advanced.git (push)
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git add .
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git commit -m "Initial commit"
+[master 9608dd7] Initial commit
+ 6 files changed, 176 insertions(+), 3 deletions(-)
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git push origin-github master
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (21/21), 4.35 KiB | 234.00 KiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To github.com:AshiyaAjare/GIT-Advanced-Assignment.git
+ * [new branch]      master -> master
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git push origin-gitlab master
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (21/21), 4.35 KiB | 742.00 KiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0), pack-reused 0
+To https://gitlab.com/AshiyaAjare/git_advanced.git
+ * [new branch]      master -> master
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$ git fetch --all
+Fetching origin-github
+Fetching origin-gitlab
+
+HP@DESKTOP-58G6OEJ MINGW64 /d/Ashiya/JOSH/INTERNSHIP/GIT Advanced/ashiya (master)
+$

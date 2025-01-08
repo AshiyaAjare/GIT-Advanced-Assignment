@@ -1,0 +1,5 @@
+Temporary change
+<<<<<<< HEAD
+Added content
+=======
+>>>>>>> c383a06 (file1.txt)
